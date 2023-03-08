@@ -1,0 +1,126 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "testUser1@domain.com",
+      "password": "$2a$10$dgPC.6EgEUPCqmHIibWzDeKwdXgNisw8xWPH.KEIOoX7oUzvjzj0S",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "email": "testUser2@domain.com",
+      "password": "$2a$10$dgPC.6EgEUPCqmHIibWzDeKwdXgNisw8xWPH.KEIOoX7oUzvjzj0S",
+      "userId": 2
+    },
+    {
+      "id": 3,
+      "email": "testUser3@domain.com",
+      "password": "$2a$10$dgPC.6EgEUPCqmHIibWzDeKwdXgNisw8xWPH.KEIOoX7oUzvjzj0S",
+      "userId": 3
+    }
+  ],
+  "games": [
+    {
+      "gameId": 1,
+      "name": "Minecraft",
+      "image": "/assets/images/minecraft.jpg"
+    },
+    {
+      "gameId": 2,
+      "name": "God of War",
+      "image": "/assets/images/gow.jpg"
+    },
+    {
+      "gameId": 3,
+      "name": "Hollow Knight",
+      "image": "/assets/images/hollow.jpg"
+    },
+    {
+      "gameId": 4,
+      "name": "Gris",
+      "image": "/assets/images/gris.jpg"
+    }
+  ],
+  "user_games": [
+    {
+      "userId": 1,
+      "gameId": 1,
+      "status": "completed",
+      "platform": "PS5",
+      "rating": "",
+      "id": 1
+    },
+    {
+      "userId": 1,
+      "gameId": 2,
+      "status": "playing",
+      "platform": "PS5",
+      "rating": "",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "gameId": 3,
+      "status": "plantoplay",
+      "platform": "PC",
+      "rating": ""
+    },
+    {
+      "userId": 1,
+      "gameId": 1,
+      "status": "playing",
+      "platform": "PC",
+      "rating": "",
+      "id": 8
+    },
+    {
+      "userId": 1,
+      "gameId": 3,
+      "status": "completed",
+      "platform": "Xbox",
+      "rating": "",
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "gameId": 4,
+      "status": "plan to play",
+      "platform": "PS5",
+      "rating": "",
+      "id": 9
+    },
+    {
+      "id": 10,
+      "userId": 1,
+      "gameId": 3,
+      "status": "plan to play",
+      "platform": "PC",
+      "rating": ""
+    },
+    {
+      "id": 11,
+      "userId": 1,
+      "gameId": 2,
+      "status": "plan to play",
+      "platform": "PC",
+      "rating": ""
+    },
+    {
+      "userId": 1,
+      "gameId": 2,
+      "status": "completed",
+      "platform": "PS5",
+      "rating": "",
+      "id": 12
+    },
+    {
+      "userId": 1,
+      "gameId": 4,
+      "status": "playing",
+      "platform": "Xbox",
+      "rating": "",
+      "id": 13
+    }
+  ]
+}

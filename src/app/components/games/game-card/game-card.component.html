@@ -1,0 +1,20 @@
+<div class="main-container">
+        <div class="poster-container">
+            <a href="#">
+                <img
+                    src="{{ game.image }}"
+                    class="poster"
+                />
+            </a>
+        </div>
+        <div class="ticket-container">
+            <div class="ticket__content">
+                <h4 class="ticket__movie-title">{{ game.name }}</h4>
+                <div>
+                    <button class="ticket__buy-btn" (click)="addGame()">
+                        + Add To List
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>

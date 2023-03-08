@@ -1,0 +1,47 @@
+<div class="login-container">
+    <app-header></app-header>
+    <form
+        class="login-form"
+        name="form"
+        (ngSubmit)="onSubmit()"
+        #f="ngForm"
+        novalidate
+    >
+        <h1 class="login-title">Login to add videogames to your list</h1>
+        <mat-form-field appearance="fill">
+            <mat-label>Enter your email</mat-label>
+            <input matInput name="email" [(ngModel)]="loginForm.email" />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Enter your password</mat-label>
+            <input
+                matInput
+                name="password"
+                [(ngModel)]="loginForm.password"
+                [type]="hide ? 'password' : 'text'"
+            />
+            <button
+                mat-icon-button
+                matSuffix
+                (click)="hide = !hide"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide"
+            >
+                <mat-icon>{{
+                    hide ? "visibility_off" : "visibility"
+                }}</mat-icon>
+            </button>
+        </mat-form-field>
+        <button type="submit" class="button-login">
+            <strong>Login</strong>
+            <div id="container-stars">
+                <div id="stars"></div>
+            </div>
+            <div id="glow">
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+        </button>
+    </form>
+    <div class="login-background"></div>
+</div>

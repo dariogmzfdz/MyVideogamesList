@@ -1,0 +1,26 @@
+<div class="header-container">
+    <div class="home">
+        <mat-icon class="logo">sports_esports</mat-icon>
+        <div class="home-title">
+            <h1>MyVideogamesList</h1>
+            <h3>Keeps them track!</h3>
+        </div>
+    </div>
+    <div class="profile-container">
+        <div class="profile" *ngIf="isLogged">
+            <mat-icon (click)="LogOut()">logout</mat-icon>
+            <mat-icon class="profile-icon">account_circle</mat-icon>
+            <h1>{{ user.email }}</h1>
+        </div>
+        <button type="button" class="button-login" [routerLink]="['/login']" *ngIf="!isLogged && !isInLogin">
+            <strong>Login</strong>
+            <div id="container-stars">
+                <div id="stars"></div>
+            </div>
+            <div id="glow">
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+        </button>
+    </div>
+</div>
