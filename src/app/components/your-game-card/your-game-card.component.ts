@@ -1,3 +1,4 @@
+import { DataService } from 'src/app/services/data.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, Input } from '@angular/core';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
@@ -11,9 +12,9 @@ export class YourGameCardComponent implements OnInit {
 
   @Input() userGame: any;
 
-  constructor(private http: HttpClient, private tokenStorageService: TokenStorageService) { }
+  constructor(private http: HttpClient, private tokenStorageService: TokenStorageService, private dataService: DataService) { }
 
-  userId = this.tokenStorageService.decodeToken().sub;
+  userId = this.tokenStorageService.decodeToken().userId;
 
   ngOnInit(): void {
     
@@ -28,8 +29,12 @@ export class YourGameCardComponent implements OnInit {
         this.userGame.status = 'plan to play';
     }
 
-    this.http.put(`http://localhost:3000/user_games/${this.userGame.id}`, {userId: +this.userId, gameId: this.userGame.gameId , status: this.userGame.status, platform: this.userGame.platform, rating: ""}).subscribe((data) => {
+    /* this.http.put(`http://localhost:3000/user_games/${this.userGame.id}`, {userId: this.userId, gameId: this.userGame.gameId , status: this.userGame.status, platform: this.userGame.platform}).subscribe((data) => {
         console.log(data);
+    }); */
+
+    this.dataService.updateUserGame(this.userId, this.userGame.gameId, this.userGame.status, this.userGame.platform).subscribe((data) => {
+      console.log(data);
     });
 
   }
@@ -43,8 +48,12 @@ export class YourGameCardComponent implements OnInit {
         this.userGame.platform = 'PC';
     }
 
-    this.http.put(`http://localhost:3000/user_games/${this.userGame.id}`, {userId: +this.userId, gameId: this.userGame.gameId , status: this.userGame.status, platform: this.userGame.platform, rating: ""}).subscribe((data) => {
+    /* this.http.put(`http://localhost:3000/user_games/${this.userGame.id}`, {userId: +this.userId, gameId: this.userGame.gameId , status: this.userGame.status, platform: this.userGame.platform, rating: ""}).subscribe((data) => {
         console.log(data);
+    }); */
+
+    this.dataService.updateUserGame(this.userId, this.userGame.gameId, this.userGame.status, this.userGame.platform).subscribe((data) => {
+      console.log(data);
     });
   }
 }

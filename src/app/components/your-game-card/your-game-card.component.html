@@ -1,7 +1,7 @@
 <div class="your-game-card">
-    <img src="{{ userGame.game.image }}" alt="" />
+    <img src="{{ userGame.game.cover }}" alt="" />
     <div class="your-game-card-content">
-        <h2>{{ userGame.game.name }}</h2>
+        <h2>{{ userGame.game.gameName }}</h2>
         <h4 (click)="changePlatform()">Platform: {{ userGame.platform }}</h4>
         <h4 (click)="changeStatus()">Status: {{ userGame.status }}</h4>
     </div>

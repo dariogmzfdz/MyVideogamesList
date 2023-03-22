@@ -1,179 +1,246 @@
 .main-container {
-	width: 270px;
-	height: 560px;
-	position: relative;
-	margin: 0 20px;
+    width: 270px;
+    height: 560px;
+    position: relative;
+    margin: 0 20px;
 }
 
 .poster-container {
-	width: 230px;
-	position: absolute;
-	top: 0;
-	left: 20px;
-	z-index: 2;
+    width: 230px;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    z-index: 2;
 }
 
 .poster {
-	width: 100%;
-	box-shadow: 0 5px 20px 3px rgba(0, 0, 0, 0.6);
+    width: 100%;
+    box-shadow: 0 5px 20px 3px rgba(0, 0, 0, 0.6);
 }
 
 .ticket-container {
-	background: #fff;
-	width: 270px;
-	height: 450px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	border-radius: 5px;
-	position: absolute;
-	top: 20px;
-	box-shadow: 0 5px 20px 3px rgba(0, 0, 0, 0.6);
-	opacity: 0;
+    background: #fff;
+    width: 270px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    position: absolute;
+    top: 20px;
+    box-shadow: 0 5px 20px 3px rgba(0, 0, 0, 0.6);
+    opacity: 0;
 }
 
 .main-container:hover .ticket-container {
-	opacity: 1;
-	animation: bounceIn 0.6s linear;
+    opacity: 1;
+    animation: bounceIn 0.6s linear;
 }
 
 @keyframes bounceIn {
-	0%,
-	20%,
-	40%,
-	60%,
-	80%,
-	to {
-		-webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-		animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-	}
-	0% {
-		opacity: 0;
-		-webkit-transform: scale3d(0.3, 0.3, 0.3);
-		transform: scale3d(0.3, 0.3, 0.3);
-	}
-	20% {
-		-webkit-transform: scale3d(1.03, 1.03, 1.03);
-		transform: scale3d(1.03, 1.03, 1.03);
-	}
-	40% {
-		-webkit-transform: scale3d(0.9, 0.9, 0.9);
-		transform: scale3d(0.9, 0.9, 0.9);
-	}
-	60% {
-		opacity: 1;
-		-webkit-transform: scale3d(1.01, 1.01, 1.01);
-		transform: scale3d(1.01, 1.01, 1.01);
-	}
-	80% {
-		-webkit-transform: scale3d(0.97, 0.97, 0.97);
-		transform: scale3d(0.97, 0.97, 0.97);
-	}
-	to {
-		opacity: 1;
-		-webkit-transform: scaleX(1);
-		transform: scaleX(1);
-	}
+    0%,
+    20%,
+    40%,
+    60%,
+    80%,
+    to {
+        -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    0% {
+        opacity: 0;
+        -webkit-transform: scale3d(0.3, 0.3, 0.3);
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+    20% {
+        -webkit-transform: scale3d(1.03, 1.03, 1.03);
+        transform: scale3d(1.03, 1.03, 1.03);
+    }
+    40% {
+        -webkit-transform: scale3d(0.9, 0.9, 0.9);
+        transform: scale3d(0.9, 0.9, 0.9);
+    }
+    60% {
+        opacity: 1;
+        -webkit-transform: scale3d(1.01, 1.01, 1.01);
+        transform: scale3d(1.01, 1.01, 1.01);
+    }
+    80% {
+        -webkit-transform: scale3d(0.97, 0.97, 0.97);
+        transform: scale3d(0.97, 0.97, 0.97);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+    }
 }
 
 @keyframes bounce {
-  50% {
-    opacity: 1;
-    transform: scale(1.1);
-  }
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
 
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .ticket__content {
-	width: 100%;
-	position: absolute;
-	bottom: 0;
-	text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
 }
 
 .ticket__movie-title {
-	text-transform: uppercase;
+    text-transform: uppercase;
 }
 
 .ticket__movie-slogan {
-	color: #999;
-	font-size: 0.9rem;
-	margin-bottom: 10px;
+    color: #999;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
 }
 
 .ticket__current-price {
-	color: #0daa34;
-	font-size: 1.4rem;
-	font-weight: bold;
-	margin-bottom: -10px;
+    color: #0daa34;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: -10px;
 }
 
 .ticket__old-price {
-	color: #999;
-	text-decoration: line-through;
-	margin-bottom: 10px;
+    color: #999;
+    text-decoration: line-through;
+    margin-bottom: 10px;
 }
 
 .ticket__buy-btn {
-	cursor: pointer;
-	width: 100%;
-	background: #2f2f2f;
-	color: white;
-	padding: 15px 0;
-	font-size: 1rem;
-	font-weight: bold;
-	text-transform: uppercase;
-	border: 0;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    background: #2f2f2f;
+    color: white;
+    padding: 15px 0;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transition: background 3s ease-in-out;
 }
 
-.icon-btn {
-	width: 30px;
-	height: 30px;
-	border: 1px solid #cdcdcd;
-	background: #999;
-	border-radius: 25px;
-	overflow: hidden;
+.cart-button {
 	position: relative;
-	transition: width 0.2s ease-in-out;
-	font-family: inherit;
-	transition: background 0.2s ease-in-out;
-}
-
-.icon-btn:hover {
-	background: #94c8ed;
-}
-
-.remove-btn {
-	cursor: pointer;
-	width: 20%;
-	height: 20%;
-	margin-left: 80%;
-	margin-bottom: 8px;
-	position: absolute;
-	background: #2f2f2f;
-	color: white;
-	font-size: 1rem;
-	font-weight: bold;
-	text-transform: uppercase;
+	padding: 10px;
+	width: 100%;
+	height: 60px;
 	border: 0;
-	border-radius: 5px;
+	border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+	background-color: #4834d4;
+	outline: none;
+	cursor: pointer;
+	color: #fff;
+	transition: .3s ease-in-out;
+	overflow: hidden;
+}
+.cart-button:hover {
+	background-color: #35269b;
+}
+.cart-button:active {
+	transform: scale(.9);
 }
 
-.add-wish-btn {
+.cart-button .fa-gamepad {
 	position: absolute;
-	margin-left: 34%;
-	border: none;
-	background: none;
-	color: red;
-	transition: color 0.2s ease-in-out;
+	z-index: 2;
+	top: 50%;
+	left: -10%;
+	font-size: 2em;
+	transform: translate(-50%,-50%);
+}
+.cart-button span {
+	position: absolute;
+	z-index: 3;
+	left: 50%;
+	top: 50%;
+	font-size: 1.2em;
+	color: #fff;
+	transform: translate(-50%,-50%);
+}
+.cart-button span.add-to-cart {
+	opacity: 1;
+}
+.cart-button span.added {
+	opacity: 0;
 }
 
-.add-wish-btn:hover {
-	color: #ff3d3d;
+.cart-button.clicked .fa-gamepad {
+	animation: gamepad 1.5s ease-in-out forwards;
+}
+.cart-button.clicked span.add-to-cart {
+	animation: txt1 1.5s ease-in-out forwards;
+}
+.cart-button.clicked span.added {
+	animation: txt2 1.5s ease-in-out forwards;
+}
+.cart-button.clicked {
+	animation: background 1.5s ease-in-out forwards;
+}
+@keyframes gamepad {
+	0% {
+		left: -10%;
+	}
+	40%, 60% {
+		left: 50%;
+	}
+	100% {
+		left: 110%;
+	}
+}
+@keyframes background {
+	0% {
+		background-color: #4834d4;
+	}
+	40%, 60% {
+		background-color: #34a7d4;
+	}
+	100% {
+		background-color: #269b30;
+	}
+}
+@keyframes txt1 {
+	0% {
+		opacity: 1;
+	}
+	20%, 100% {
+		opacity: 0;
+	}
+}
+@keyframes txt2 {
+	0%, 80% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.ticket__buy-btn-remove {
+    cursor: pointer;
+    width: 100%;
+    background: #ffd401;
+    color: white;
+    padding: 15px 0;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transition: background 3s ease-in-out;
 }

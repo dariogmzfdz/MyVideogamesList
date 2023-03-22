@@ -30,18 +30,22 @@ export class YourGamesComponent implements AfterViewInit {
     ngOnInit(): void {
       
       
-      const userId = this.tokenStorageService.decodeToken().sub;
+      const userId = this.tokenStorageService.decodeToken().userId;
       this.dataService.getGames().subscribe((data: Game[]) => {
             this.games = data;
+            console.log(this.games);
+            
             this.dataService.getUserGames().subscribe((data: UserGames[]) => {
                 this.userGames = data;
+                console.log(this.userGames);
+                
                 this.userGames.forEach(
                     (ug) =>
                         (ug.game = this.games.find(
                             (g) => g.gameId === ug.gameId
                         ))
                 );
-                this.dataSource.data = this.userGames.filter((ug) => (ug.userId === +userId));
+                this.dataSource.data = this.userGames.filter((ug) => (ug.userId === userId));
                 console.log(this.dataSource.data.length);
             });
         });

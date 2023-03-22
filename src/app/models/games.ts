@@ -1,6 +1,6 @@
 export class Game {
     constructor(
-        public gameId: number,
+        public gameId: string,
         public name: string,
         public image: string,
     ) { }
@@ -8,19 +8,17 @@ export class Game {
 
 export class UserGames {
     constructor(
-        public id: number,
-        public userId: number,
-        public gameId: number,
+        public userId: string,
+        public gameId: string,
         public status: string,
         public platform: string,
-        public rating: number,
         public game: Game | undefined,
     ) { }
 }
 
 export class User {
     constructor(
-        public id: number,
+        public userId: string,
         public username: string,
         public password: string,
     ) { }

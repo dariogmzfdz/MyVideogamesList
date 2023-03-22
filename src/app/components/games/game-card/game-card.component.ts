@@ -14,17 +14,30 @@ export class GameCardComponent implements OnInit {
   
   
   constructor(private dataService: DataService, private tokenStorageService: TokenStorageService) { }
+
+  userId = this.tokenStorageService.decodeToken().userId;
+
+  isAdded = false;
   
   ngOnInit(): void {
+    console.log(this.game);
+    const isAdded = this.dataService.isAdded(this.game.gameId, this.userId);
+    if (isAdded) {
+      this.isAdded = true;
+    }
+    console.log(this.isAdded);
+    
   }
   
   addGame() {
-    const userId = +this.tokenStorageService.decodeToken().sub;
+    const userId = this.tokenStorageService.decodeToken().userId;
     const gameId = this.game.gameId;
 
     this.dataService.addUserGame(userId, gameId).subscribe((data) => {
       console.log(data);
     });
+
+    this.isAdded = true;
   }
 
 }

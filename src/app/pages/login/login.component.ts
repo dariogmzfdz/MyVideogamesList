@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { DataService } from 'src/app/services/data.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 
@@ -22,12 +23,14 @@ export class LoginComponent implements OnInit {
 
     ngOnInit(): void {}
 
-    onSubmit(): void {
+    onSubmit(f: NgForm): void {
         const { email, password } = this.loginForm;
+        console.log(email, password);
+        
 
         this.dataService.login(email, password).subscribe(
             (data) => {
-                this.tokenStorageService.saveToken(data.accessToken);
+                this.tokenStorageService.saveToken(data.token);
                 this.isLogged = true;
                 this.isLoginFailed = false;
                 this.errorLogin = '';
